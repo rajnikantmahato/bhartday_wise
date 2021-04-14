@@ -1,0 +1,399 @@
+<!-- bandra by samay
+
+    This is a bhandara 
+
+
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Amardeep Kesharwani" />
+    <title>B'day Samay 🎁🎂🎉</title>
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Google Sans" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Google Sans;
+            font-weight: 400;
+            line-height: 1.3;
+            font-size: 1rem;
+            background: #000;
+        }
+        
+        img {
+            width: 100%;
+            margin-bottom: 0;
+            border: none;
+        }
+        
+        button {
+            display: inline-block;
+            outline: none;
+            border: none;
+            transition: 0.3s ease;
+            font-size: 16px;
+            padding: 10px 25px;
+            color: #fff;
+            background: #f44557;
+            border-radius: 20px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+        
+        button:hover {
+            animation: zoomIn 0.5s ease;
+        }
+        
+        .sec {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            height: 100vh;
+            width: 100%;
+            background-color: #000;
+            background-position: center top;
+            background-size: cover;
+            display: none;
+        }
+        
+        .sec.zoom {
+            background-position: center center;
+            animation: zooming 2s forwards;
+        }
+        
+        .sec.show {
+            display: block;
+            animation: zoomOut 1s;
+        }
+        
+        .sec .content {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .sec1 {
+            display: block;
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF06pwltv6UBlVT6vqvRDZZHR7flT8Lclt-A&usqp=CAU");
+            z-index: 6;
+        }
+        
+        .sec1 button {
+            background: #ff8aed;
+        }
+        
+        .sec2 {
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9GWoEV_7xENPsfCnmyKCUmJtgBuWpW1Mrjg&usqp=CAU");
+            z-index: 5;
+        }
+        
+        .sec2 button {
+            background: #f2f2bf;
+            color: #000;
+            animation: zoomOut 1s ease 2.5s both;
+        }
+        
+        .sec2-text {
+            text-align: left;
+            padding: 20px;
+            color: #fff;
+        }
+        
+        .sec2-text h1 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+            animation: fadeInLeft 1s ease 1.5s both;
+        }
+        
+        .sec2-text p {
+            animation: fadeInLeft 1s ease 2s both;
+        }
+        
+        .sec3 {
+            background-image: url("https://i.pinimg.com/originals/12/4d/e3/124de3d1b5e12f1d8fcec1685e634361.gif");
+            background-color: #fff;
+            background-size: 100%;
+            z-index: 4;
+            text-align: center;
+            overflow: scroll;
+        }
+        
+        .profile {
+            height: 120px;
+            width: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: -50px auto 0;
+            transform: translateY(0);
+            z-index: 2;
+        }
+        
+        .sec3-content {
+            padding: 10px 20px;
+        }
+        
+        .sec3-content p {
+            margin: 10px 0;
+            color: #555;
+        }
+        
+        .sec4 {
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6AyAK-3Pba0GHctShcqqJm9EWiktaz8r2cg&usqp=CAU");
+            background-position: center;
+            z-index: 3;
+            overflow-y: scroll;
+        }
+        
+        .sec4 button {
+            background: #7b29ff;
+        }
+        
+        .sec4 .content {
+            text-align: left;
+            padding: 20px;
+        }
+        
+        .sec4-text {
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 4px;
+        }
+        
+        .sec4-text h3 {
+            margin: 5px 0;
+        }
+        
+        .sec5 {
+            background-color: #fff;
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQjvE3TNVKC5YU6wya7ahuSzF2YcdCC6xmjg&usqp=CAU");
+            z-index: 2;
+        }
+        
+        .sec3 .img {
+            transform: translateY(-20px);
+            padding: 0 20px;
+            animation: upToDown 2s linear infinite;
+        }
+        
+        .btn-group {
+            display: flex;
+            width: 100%;
+            padding: 20px;
+            justify-content: space-evenly;
+            background: #f7f7f7;
+        }
+        
+        .btn-group span {
+            position: relative;
+            display: inline-block;
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+        }
+        
+        .btn-group span::before {
+            content: "";
+            position: absolute;
+            height: 12px;
+            width: 12px;
+            background: #fff;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: 0.3s;
+        }
+        
+        .btn-group span.active::before {
+            opacity: 1;
+        }
+        
+        .btn-group span:nth-child(1) {
+            background: #7b29ff;
+        }
+        
+        .btn-group span:nth-child(2) {
+            background: #0ad2ff;
+        }
+        
+        .btn-group span:nth-child(3) {
+            background: #f44557;
+        }
+        
+        .btn-group span:nth-child(4) {
+            background: #ffff14;
+        }
+        
+        .btn-group span:nth-child(5) {
+            background: #262626;
+        }
+        
+        @keyframes upToDown {
+            0%,
+            100% {
+                transform: translateY(-20px);
+            }
+            50% {
+                transform: translateY(-60px);
+            }
+        }
+        
+        @keyframes zoomIn {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(0.5);
+            }
+        }
+        
+        @keyframes zoomOut {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            0% {
+                transform: translateX(-40px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes zooming {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            80% {
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="sec sec1">
+        <div class="content">
+            <button id="btn1">Enter the party</button>
+        </div>
+    </section>
+    <section class="sec sec2">
+        <div class="content">
+            <div class="sec2-text">
+                <h1>Welcome to Samay <br> Birthday Party 🎉</h1>
+                <p>This Party Organised by Rajni, and all Team.</p>
+            </div>
+            <button id="btn2">Welcome</button>
+        </div>
+    </section>
+    <section class="sec sec3">
+        <img class="img" src="https://i.pinimg.com/originals/03/6a/b8/036ab8986bea815981db17f171359d0a.gif" alt="ak">
+        <div class="profile">
+            <img src="https://api.sololearn.com/Uploads/Avatars/18653347.jpg" alt="">
+        </div>
+        <div class="sec3-content">
+            <h2>Samay 🍝</h2>
+            <p>On your birthday we wish for you that whatever you want most in life it comes to you just the way you imagined it or better. Happy birthday!</p>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0Hq3vrUDjkOwnKwEdNAu2yzCzzoHGOKVkWQ&usqp=CAU" alt="ak">
+            <button id="btn3">Lea's Party</button>
+        </div>
+    </section>
+    <section class="sec sec4">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6dwqt7vq7KSRB9e3IxSrZ-vPGSNLTrDtChg&usqp=CAU" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0dKbcv8ljvfKfbSx-v8UxhmlN93ZEZr7W0g&usqp=CAU" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTForvH1nNA7F1e3DQRbRNWtcFeEMnjpVT9gw&usqp=CAU" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT67gH61hoL-GcmNGTRqechsow8kQbRq15Spw&usqp=CAU" alt="">
+
+        <div class="content">
+            <div class="sec4-text">
+                <h5>Party to bache krate hai, ham to bhandara krate h</h5>
+                <h3>Enjoy the Bhandara</h3>
+                <p>Party me aaye huye sabhi dosto se anurodh hai ki bhandare ka pura Anand le khud bhi khaye aur apne dosto ko bhi khilaye aur sath me pack kara kar ghar bhi le jaye 😁😁</p>
+            </div>
+            <button id="btn4">Lea's Dance</button>
+        </div>
+    </section>
+    <section class="sec sec5">
+
+        <img class="top-dec" src="https://media.tenor.com/images/329537df76a0ddb59171bee8b4b13f51/tenor.gif" alt="">
+        <img class="cat-dance" src="https://www.funimada.com/assets/images/cards/big/bday-459.gif" alt="">
+        <div class="btn-group">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <!-- Rajni Kant Mahato -->
+        </div>
+    </section>
+
+    <audio id="music" loop></audio>
+    <!-- script -->
+    <script>
+        const link = ["https://www.dropbox.com/s/vthqpna5ha975so/Aye%20Meri%20Zohrajabeen%20-%20Phir%20Hera%20Pheri.mp3?dl=1", "https://www.dropbox.com/s/14k6lgdoo7lqkjw/Party%20all%20night.mp3?dl=1", "https://www.dropbox.com/s/dhxb3cxhwag1rtb/Nagin%20Been.mp3?dl=1", "https://www.dropbox.com/s/arjkv7o5q3yjyje/Mast%20Punjabi.mp3?dl=1", "https://www.dropbox.com/s/vthqpna5ha975so/Aye%20Meri%20Zohrajabeen%20-%20Phir%20Hera%20Pheri.mp3?dl=1"]
+        const select = sec => document.querySelector(sec);
+        const music = document.getElementById("music");
+        let akTrack = (btn, action, action2, msrc) => {
+            select(btn).addEventListener("click", () => {
+                select(action).classList.add("zoom");
+                setTimeout(() => {
+                    select(action).remove();
+                    select(action2).classList.add("show");
+                    music.pause()
+                    music.src = msrc;
+                    music.play()
+                }, 2100)
+            })
+        }
+        akTrack("#btn1", ".sec1", ".sec2", "https://mobcup.net/d/6qhikee5/mp3");
+        akTrack("#btn2", ".sec2", ".sec3", "https://mobcup.net/d/x3bp4sar/mp3");
+        akTrack("#btn3", ".sec3", ".sec4", "https://mobcup.net/d/dku7tkvt/mp3");
+        akTrack("#btn4", ".sec4", ".sec5", link[0]);
+        const btns = Array.from(document.querySelectorAll(".btn-group span"));
+        btns.forEach((ele, n) => {
+            ele.addEventListener("click", (e) => {
+                btns.forEach(el => {
+                    if (el.classList.contains("active")) el.classList.remove("active");
+                })
+                e.target.classList.add('active');
+                music.pause()
+                music.src = link[n];
+                music.play()
+            })
+        })
+    </script>
+</body>
+
+</html>
